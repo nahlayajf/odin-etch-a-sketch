@@ -8,8 +8,8 @@ function promptSize() {
 
 function genGrid(size) {
     let n = size;
-    totalSquares = (n * (n + 1) * (2 * n + 1)) / 6
-    for (let i = 0; i < totalSquares - 1; i++) {
+    totalSquares = n * n
+    for (let i = 0; i < totalSquares; i++) {
         const square = document.createElement("div");
         square.classList.add("square");
         container.appendChild(square);
