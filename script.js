@@ -1,7 +1,9 @@
 const container = document.querySelector("#container");
 function promptSize() {
-    let size = prompt("Please enter number 1-100:", "16")
-
+    let size;
+    do {
+        size = prompt("Please enter number 1-100:", "16");
+    } while (size > 100);
     return size;
 }
 
