@@ -26,17 +26,18 @@ function genGrid(size) {
 
 let size = promptSize();
 genGrid(size);
+changeSquareColor();
 
-
-
-let squares = document.querySelectorAll(".square");
-squares.forEach((square) => {
-    square.addEventListener("mouseover", () => changeSquareColor()
-    );
-    function changeSquareColor() {
-        square.style.background = "blue";
-    }
-})
+function changeSquareColor() {
+    let squares = document.querySelectorAll(".square");
+    squares.forEach((square) => {
+        square.addEventListener("mouseover", () => changeSquareColor()
+        );
+        function changeSquareColor() {
+            square.style.background = "blue";
+        }
+    })
+}
 // When User clicks "new grid button"
 // User prompted for size "1-100"
 // A gride of that size is generated
