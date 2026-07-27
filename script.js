@@ -28,11 +28,19 @@ let size = promptSize();
 genGrid(size);
 
 
+
+let squares = document.querySelectorAll(".square");
+squares.forEach((square) => {
+    square.addEventListener("mouseover", () => changeSquareColor()
+    );
+    function changeSquareColor() {
+        square.style.background = "blue";
+    }
+})
 // When User clicks "new grid button"
 // User prompted for size "1-100"
 // A gride of that size is generated
 // Color of squares is resets
-
 // When User hovers over a square 
 // Square changes color 
 
