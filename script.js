@@ -6,8 +6,14 @@ newGridBtn.classList.add("newGridBtn");
 newGridBtn.textContent = "New Size";
 content.appendChild(newGridBtn);
 
-newGridBtn.addEventListener("click", () => promptSize()
-);
+newGridBtn.addEventListener("click", () => {
+    resetGrid();
+    const size = promptSize()
+    genGrid(size);
+
+}
+
+)
 
 function promptSize() {
     let size;
@@ -20,6 +26,7 @@ function promptSize() {
 
 
 function genGrid(size) {
+
     let n = size;
     totalSquares = n * n
     let percentage = 100 / n
@@ -34,6 +41,10 @@ function genGrid(size) {
 
 }
 
+function resetGrid() {
+    let squares = document.querySelectorAll(".square");
+    squares.forEach(square => square.remove());
+}
 let size = promptSize();
 genGrid(size);
 changeSquareColor();
