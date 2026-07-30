@@ -1,4 +1,14 @@
+
 const container = document.querySelector("#container");
+const content = document.querySelector("body");
+const newGridBtn = document.createElement("button");
+newGridBtn.classList.add("newGridBtn");
+newGridBtn.textContent = "New Size";
+content.appendChild(newGridBtn);
+
+newGridBtn.addEventListener("click", () => promptSize()
+);
+
 function promptSize() {
     let size;
     do {
@@ -38,6 +48,8 @@ function changeSquareColor() {
         }
     })
 }
+
+
 // When User clicks "new grid button"
 // User prompted for size "1-100"
 // A gride of that size is generated
