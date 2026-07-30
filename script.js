@@ -52,11 +52,12 @@ function resetGrid() {
 function changeSquareColor() {
     let squares = document.querySelectorAll(".square");
     squares.forEach((square) => {
-        square.addEventListener("mouseover", () => changeSquareColor()
-        );
-        function changeSquareColor() {
-            square.style.background = "blue";
-        }
+        square.addEventListener("mouseover", () => {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            square.style.background = `rgb(${r}, ${g}, ${b})`;
+        });
     })
 }
 
