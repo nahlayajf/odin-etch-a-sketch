@@ -10,6 +10,7 @@ newGridBtn.addEventListener("click", () => {
     resetGrid();
     const size = promptSize()
     genGrid(size);
+    changeSquareColor();
 
 }
 
@@ -47,7 +48,7 @@ function resetGrid() {
 }
 let size = promptSize();
 genGrid(size);
-changeSquareColor();
+
 
 function changeSquareColor() {
     let squares = document.querySelectorAll(".square");
@@ -61,12 +62,7 @@ function changeSquareColor() {
 }
 
 
-// When User clicks "new grid button"
-// User prompted for size "1-100"
-// A gride of that size is generated
-// Color of squares is resets
-// When User hovers over a square 
-// Square changes color 
+
 
 
 
