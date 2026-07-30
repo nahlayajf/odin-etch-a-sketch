@@ -1,9 +1,9 @@
-
-const container = document.querySelector("#container");
 const content = document.querySelector("body");
+const container = document.querySelector("#container");
+
 const newGridBtn = document.createElement("button");
 newGridBtn.classList.add("newGridBtn");
-newGridBtn.textContent = "New Size";
+newGridBtn.textContent = "New Grid";
 content.appendChild(newGridBtn);
 
 newGridBtn.addEventListener("click", () => {
@@ -46,8 +46,7 @@ function resetGrid() {
     let squares = document.querySelectorAll(".square");
     squares.forEach(square => square.remove());
 }
-let size = promptSize();
-genGrid(size);
+
 
 
 function changeSquareColor() {
