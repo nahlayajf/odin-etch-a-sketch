@@ -51,16 +51,23 @@ function resetGrid() {
 
 function changeSquareColor() {
     let squares = document.querySelectorAll(".square");
+
     squares.forEach((square) => {
+        // have a set opacity for square color
+        square.style.opacity = "1";
+        let currentOpacity = square.style.opacity;
         square.addEventListener("mouseover", () => {
             const r = Math.floor(Math.random() * 256);
             const g = Math.floor(Math.random() * 256);
             const b = Math.floor(Math.random() * 256);
             square.style.background = `rgb(${r}, ${g}, ${b})`;
+
+            // on each hover lower opacity 10% 
+            square.style.opacity = currentOpacity - 0.1;
+
         });
     })
 }
-
 
 
 
