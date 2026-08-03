@@ -50,25 +50,30 @@ function resetGrid() {
 
 
 function changeSquareColor() {
+    let currentOpacity;
     let squares = document.querySelectorAll(".square");
+    squares.forEach((square) => {
+        square.style.opacity = "0.1";
+        currentOpacity = square.style.opacity;
+    })
 
     squares.forEach((square) => {
         // have a set opacity for square color
-        square.style.opacity = "1";
-        let currentOpacity = square.style.opacity;
+
+        console.log(currentOpacity)
         square.addEventListener("mouseover", () => {
             const r = Math.floor(Math.random() * 256);
             const g = Math.floor(Math.random() * 256);
             const b = Math.floor(Math.random() * 256);
             square.style.background = `rgb(${r}, ${g}, ${b})`;
-
-            // on each hover lower opacity 10% 
-            square.style.opacity = currentOpacity - 0.1;
-
+            square.style.opacity = currentOpacity + 0.1;
+            currentOpacity = square.style.opacity
         });
+        console.log(currentOpacity)
+        console.log(square.style.opacity)
+
     })
 }
-
 
 
 
