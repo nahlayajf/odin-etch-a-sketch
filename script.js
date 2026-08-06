@@ -50,28 +50,31 @@ function resetGrid() {
 
 
 function changeSquareColor() {
-    let currentOpacity;
+
+
     let squares = document.querySelectorAll(".square");
-    squares.forEach((square) => {
-        square.style.opacity = "0.1";
-        currentOpacity = square.style.opacity;
-    })
+
 
     squares.forEach((square) => {
+
         // have a set opacity for square color
 
-        console.log(currentOpacity)
+        let currentOpacity;
+        square.style.opacity = 0;
+        currentOpacity = square.style.opacity;
+
         square.addEventListener("mouseover", () => {
+
             const r = Math.floor(Math.random() * 256);
             const g = Math.floor(Math.random() * 256);
             const b = Math.floor(Math.random() * 256);
             square.style.background = `rgb(${r}, ${g}, ${b})`;
-            square.style.opacity = currentOpacity + 0.1;
-            currentOpacity = square.style.opacity
-        });
-        console.log(currentOpacity)
-        console.log(square.style.opacity)
 
+            if (currentOpacity < 1) {
+                square.style.opacity = parseFloat(currentOpacity) + 0.1;
+                currentOpacity = square.style.opacity;
+            }
+        });
     })
 }
 
