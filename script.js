@@ -57,7 +57,7 @@ function changeSquareColor() {
 
     squares.forEach((square) => {
 
-        // have a set opacity for square color
+
 
         let currentOpacity;
         square.style.opacity = 0;
